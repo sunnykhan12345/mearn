@@ -1,0 +1,86 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  background-color: skyblue;
+  padding: 10px;
+  align-items: center;
+}
+.nav_ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 10px;
+}
+.nav_ul li a {
+  text-decoration: none;
+  color: white;
+}
+.personal {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+}
+.personal li a {
+  color: white;
+  text-decoration: none;
+  padding: 0 5px;
+}
+.footer {
+  background-color: skyblue;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  /* width: 100%; */
+  width: 100%;
+}
+
+.signup {
+  width: 100%;
+  /* background: gainsboro; */
+  height: max-content;
+  /* padding: 10px; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.signup input {
+  display: block;
+  padding: px;
+  margin: 20px;
+  border: 1px solid skyblue;
+  padding: 10px 4px;
+  border-radius: 5px;
+  width: 300px;
+  cursor: pointer;
+}
+.signup input:focus {
+  outline: none;
+}
+
+.signup h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  text-transform: capitalize;
+  color: black;
+}
+.signupbtn {
+  padding: 8px 32px;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  color: white;
+  background-color: slateblue;
+  /* margin-bottom: 60px; */
+
+  margin-left: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
