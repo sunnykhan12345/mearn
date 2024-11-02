@@ -26,6 +26,9 @@
   text-decoration: none;
   padding: 0 5px;
 }
+.nav-right {
+  text-align: right;
+}
 .footer {
   background-color: skyblue;
   padding: 10px;
