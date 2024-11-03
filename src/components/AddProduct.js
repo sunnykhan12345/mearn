@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AddProduct = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [company, setCompany] = useState("");
+  const [error, setError] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleData = async (e) => {
+    if (!name || !price || !category || !company) {
+      setError(true);
+      return false;
+    }
+    // return false;
     e.preventDefault();
     console.log({ name, price, category, company });
     const userId = JSON.parse(localStorage.getItem("user"))._id;
@@ -21,15 +27,21 @@ const AddProduct = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "0 auto", padding: "16px" }}>
+    <div
+      style={{
+        maxWidth: "400px",
+        margin: "0 auto",
+        padding: "16px",
+      }}
+    >
       <h2
         style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px" }}
       >
         Add Product
       </h2>
 
-      <form
-        onSubmit={handleSubmit}
+      <p
+        // onSubmit={handleSubmit}
         style={{ display: "flex", flexDirection: "column", gap: "16px" }}
       >
         {/* Product Name */}
@@ -46,7 +58,7 @@ const AddProduct = () => {
             outline: "none",
           }}
         />
-
+        {error && !name && <span>Invalid Name</span>}
         {/* Product Price */}
         <input
           type="text"
@@ -61,7 +73,7 @@ const AddProduct = () => {
             outline: "none",
           }}
         />
-
+        {error && !price && <span>Invalid Name</span>}
         {/* Product Category */}
         <input
           type="text"
@@ -76,6 +88,7 @@ const AddProduct = () => {
             outline: "none",
           }}
         />
+        {error && !category && <span>Invalid Name</span>}
 
         {/* Product Company */}
         <input
@@ -91,9 +104,10 @@ const AddProduct = () => {
             outline: "none",
           }}
         />
-
+        {error && !company && <span>Invalid Name</span>}
         {/* Submit Button */}
         <button
+          onClick={handleData}
           type="submit"
           style={{
             width: "100%",
@@ -107,7 +121,7 @@ const AddProduct = () => {
         >
           Submit
         </button>
-      </form>
+      </p>
     </div>
   );
 };

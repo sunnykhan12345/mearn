@@ -87,3 +87,8 @@
   cursor: pointer;
   margin-bottom: 20px;
 }
+span {
+  color: red;
+  margin: 0px;
+  font-size: small;
+}
